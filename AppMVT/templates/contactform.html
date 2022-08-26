@@ -1,0 +1,18 @@
+{% extends "maintemplate.html" %}
+{% load static %}
+
+{% block contenidoQueCambia %}
+<div style="padding: 2em; display: flexbox; justify-content: center; align-items: center;">
+{% if form.errors %}
+    <h2>ERRO!</h2>
+{% endif %}
+
+<form action="" method="post" style="margin: 0 auto; width: fit-content">{% csrf_token %}
+    <table>
+        {{ form.as_table }}
+    </table>
+   
+    <input type="submit" value="Enviar">
+</form>
+</div>
+{% endblock %}
