@@ -21,5 +21,6 @@ import AppMVT.urls
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', inicio),
-    path('', include('AppMVT.urls'))
+    path('', include('AppMVT.urls')),
+    path('AppMVT/', include('AppMVT.urls'))
 ]

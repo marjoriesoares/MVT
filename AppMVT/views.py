@@ -1,6 +1,9 @@
 from django.shortcuts import render
 from AppMVT.forms import ContactForm
 
+def inicioApp(request):
+    return render(request, 'inicioApp.html')
+
 def contactform(request):
 
     if request.method == 'GET':
@@ -18,4 +21,11 @@ def contactform(request):
             #return render()
 
     return render(request, 'contactform.html', {"form": miFormulario})
+
+def portfolio(request):
+    return render(request, 'portfolio.html')
+
+def about(request):
+    return render(request, 'about.html')
+
 
