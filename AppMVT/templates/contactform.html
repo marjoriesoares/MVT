@@ -4,35 +4,29 @@
 <title>Contacto</title>
 {% endblock %}
 {% block Masterhead %}
-
-
+<div style="margin: 8em";></div>
 {% endblock %}
+
 {% block contenidoQueCambia %}
-<header class="masthead bg-primary text-white text-center">
-    <div class="container d-flex align-items-center flex-column">
-        <h1 class="masthead-heading text-uppercase mb-0">Contacto</h1>
+
+<section id="contact">
+    <div class="container"; style="margin:5em;">
+        <!-- Contact Section Heading-->
+        <h2 class="page-section-heading text-center text-uppercase text-secondary mb-0">Contacto</h2>
         <!-- Icon Divider-->
-        <div class="divider-custom divider-light">
+        <div class="divider-custom">
             <div class="divider-custom-line"></div>
             <div class="divider-custom-icon"><i class="fas fa-star"></i></div>
             <div class="divider-custom-line"></div>
         </div>
+    <form action="" method="post" style="margin: 0 auto; width: fit-content">{% csrf_token %}
+        <table>
+            {{ form.as_table }}
+        </table>
+    
+        <p style="text-align:center">
+            <input type="submit", value="Enviar">
+        </p>
+    </form>
     </div>
-</header>
-
-<div style="padding: 2em; display: flexbox; justify-content: center; align-items: center;">
-</div>
-{% if form.errors %}
-    <h2>ERRO!</h2>
-{% endif %}
-
-
-<form action="" method="post" style="margin: 0 auto; width: fit-content">{% csrf_token %}
-    <table>
-        {{ form.as_table }}
-    </table>
-   
-    <input type="submit" value="Enviar">
-</form>
-</div>
 {% endblock %}
