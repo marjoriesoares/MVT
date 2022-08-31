@@ -20,6 +20,7 @@ urlpatterns = [
     path('', inicioApp, name='inicioApp'),
     path('inicioApp/', inicioApp),
     path('lenguajes/', languages, name='languages'),
+    path('lenguajes/<language>', languages, name='languages'),
     path('buscarlenguajes/', searchlanguages, name='searchlanguages'),
     path('about/', about, name='about'),
     path('contacto/', contactform, name='contactform'),

@@ -1,26 +1,48 @@
-{% extends "AppMVT/maintemplate.html" %}
-{% load static %}
-{% block Title %}
+{% extends "AppMVT/maintemplate.html" %} {% load static %} {% block Title %}
 <title>Lenguajes</title>
-{% endblock %}
-{% block Masterhead %}
-<div style="margin: 8em";></div>
-{% endblock %}
-{% block contenidoQueCambia %}
+{% endblock %} {% block Masterhead %}
+<div style="margin: 8em" ;></div>
+{% endblock %} {% block contenidoQueCambia %}
 <section id="language">
-    <div class="container"; style="margin:5em;">
-        <h2 class="page-section-heading text-center text-uppercase text-secondary mb-0">Lenguajes de Programación</h2>
-        <div style="margin: 2em";></div>
-        <h4 class="page-section-heading text-center text-secondary mb-0">Busque un lenguaje y descubra más acerca de el</h4>
-        <div class="divider-custom">
-            <div class="divider-custom-line"></div>
-            <div class="divider-custom-icon"><i class="fas fa-star"></i></div>
-            <div class="divider-custom-line"></div>
-        </div>
+  <div class="container" ; style="margin: 5em">
+    <h2
+      class="page-section-heading text-center text-uppercase text-secondary mb-0"
+    >
+      Lenguajes de Programación
+    </h2>
+    <div style="margin: 2em" ;></div>
+    <h4 class="page-section-heading text-center text-secondary mb-0">
+      Busque un lenguaje y descubra más acerca de el
+    </h4>
+    <div class="divider-custom">
+      <div class="divider-custom-line"></div>
+      <div class="divider-custom-icon"><i class="fas fa-star"></i></div>
+      <div class="divider-custom-line"></div>
     </div>
-    <form action="{% url 'AppMVT/lenguajes' %}" method="GET"style="margin: 0 auto; width: fit-content">
-            <p style="text-align:center; font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;">Lenguaje:<input type="text" name="language" id="language"></p>
-            <p style="text-align: center;"><input class="btn btn-primary" type="submit" value="Buscar"></p>
-    </form>
-</section>  
+  </div>
+  {% if language %}
+  <div>
+    <p>{{ language }}</p>
+    <p>{{ text.text }}</p>
+  </div>
+  {% endif %}
+  <form
+    action="/AppMVT/buscarlenguajes"
+    method="GET"
+    style="margin: 0 auto; width: fit-content"
+  >
+    <p
+      style="
+        text-align: center;
+        font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande',
+          'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+      "
+    >
+      Lenguaje:<input type="text" name="language" id="language" />
+    </p>
+    <p style="text-align: center">
+      <input class="btn btn-primary" type="submit" value="Buscar" />
+    </p>
+  </form>
+</section>
 {% endblock %}
