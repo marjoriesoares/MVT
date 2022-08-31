@@ -23,9 +23,9 @@
   {% if language %}
   <div>
     <p>{{ language }}</p>
-    <p>{{ text.text }}</p>
+    <p>{{ text }}</p>
   </div>
-  {% endif %}
+  {% else %}
   <form
     action="/AppMVT/buscarlenguajes"
     method="GET"
@@ -44,5 +44,6 @@
       <input class="btn btn-primary" type="submit" value="Buscar" />
     </p>
   </form>
+  {% endif %}
 </section>
 {% endblock %}

@@ -13,11 +13,11 @@ def about(request):
 
 def languages(request, language=False):
     if language:
-        text = Languages.objects.filter(language=language)
+        lang = Languages.objects.get(language__icontains=language)
         return render(
             request,
             'AppMVT/languages.html',
-            {'language': language, 'text': text}
+            {'language': lang.language, 'text': lang.text}
         )
     else:
         return render(request,'AppMVT/languages.html')
