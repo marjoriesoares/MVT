@@ -1,0 +1,42 @@
+{% extends "AppMVT/maintemplate.html" %}
+{% load static %}
+{% block Title %}
+<title>Contacto</title>
+{% endblock %}
+{% block Masterhead %}
+<div style="margin: 8em";></div>
+{% endblock %}
+
+{% block contenidoQueCambia %}
+<style>
+    #tableForm  td, th{
+
+        font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    }
+    #tableForm label {
+        font-family: Arial, Helvetica, sans-serif;
+        color: #2c3e50
+    }
+</style>
+<section id="contact">
+    <div class="container"; style="margin:5em;">
+        <h2 class="page-section-heading text-center text-uppercase text-secondary mb-0">Contacto</h2>
+        <div class="divider-custom">
+            <div class="divider-custom-line"></div>
+            <div class="divider-custom-icon"><i class="fas fa-star"></i></div>
+            <div class="divider-custom-line"></div>
+        </div>
+    <form action="/AppMVT/" method="post" style="margin: 0 auto; width: fit-content">{% csrf_token %}
+        <table id="tableForm">
+            
+           {{ contactform.as_table }}
+
+        </table>
+    
+        <p style="text-align:center;  margin-top: 1em;">
+            <input  class="btn btn-primary" type="submit", value="Enviar">
+        </p>
+    </form>
+    </div>
+</section>
+{% endblock %}
