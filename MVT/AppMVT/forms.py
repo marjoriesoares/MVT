@@ -10,3 +10,6 @@ class ContactForm(forms.Form):
 class LanguagesForm(forms.Form):
      language=forms.CharField(label='Lenguaje', widget=forms.TextInput(attrs={'placeholder': 'Ingrese su nombre completo', 'class': 'form-control', 'style': 'width: 246px;'}))
      text=forms.CharField(label='Descripción', max_length = 600, widget=forms.Textarea(attrs={'placeholder': 'Ingrese una descripción del lenguaje', 'class': 'form-control', 'style': 'width: 246px;'}))
+
+class SearchLanguageForm(forms.Form):
+     language=forms.CharField(widget=forms.TextInput(attrs={'placeholder': 'Nombre del lenguaje', 'class': 'form-control text-center', 'style': 'width: 246px;'}))
