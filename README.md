@@ -43,7 +43,7 @@ The contact form works as the method “POST” and will send user data to the D
 4.	The about session is only a session to test the image file and how it displays in the template. The image can be replaced with your own information.
 Remember to change all the information in the footer related to the author as well.
 
----------------------------------------------------------------- Español --------------------------------------------------------------------------------
+---------------------------------------------------------------- Español -------------------------------------------------
 # Proyecto Final - Curso Python - Coderhouse 
 
 ## Proyecto MVT - Python Framework Django 
