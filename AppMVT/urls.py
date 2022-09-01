@@ -19,6 +19,7 @@ from .views import *
 urlpatterns = [
     path('', inicioApp, name='inicioApp'),
     path('inicioApp/', inicioApp),
+    path('cursos/', courses, name='courses'),
     path('lenguajes/', languages, name='languages'),
     path('lenguajes/<language>', languages, name='languages'),
     path('buscarlenguajes/', searchlanguages, name='searchlanguages'),

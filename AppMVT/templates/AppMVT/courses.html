@@ -1,0 +1,29 @@
+{% extends "AppMVT/maintemplate.html" %} {% load static %} {% block Title %}
+<title>Cursos</title>
+{% endblock %} {% block Masterhead %}
+{% endblock %} {% block contenidoQueCambia %}
+<section class="page-section portfolio" style="margin: 0 auto" id="courses">
+  <div class="container" ; style="margin: 5em auto">
+    <h2
+      class="page-section-heading text-center text-uppercase text-secondary mb-0"
+    >
+      Cursos de Programación en Coderhouse
+    </h2>
+    <div style="margin: 2em" ;></div>
+    <div class="divider-custom">
+      <div class="divider-custom-line"></div>
+      <div class="divider-custom-icon"><i class="fas fa-star"></i></div>
+      <div class="divider-custom-line"></div>
+    </div>
+    <h4 class="page-section-heading text-center text-secondary mb-0">
+      Consulte los próximos cursos disponibles de Coderhouse en la area de Programación
+    </h4>
+  </div>
+  {% for course in Courses %}
+  <div class="portfolio-item mx-auto">
+    <li><p class="text-center">{{ course }}</p></li>
+    -----------------------------------------
+  </div>
+  {% endfor %}
+</section>
+{% endblock %}

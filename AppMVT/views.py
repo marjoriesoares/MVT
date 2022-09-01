@@ -8,9 +8,8 @@ from django.http import HttpResponse, HttpResponseRedirect
 def inicioApp(request):
     return render(request, "AppMVT/inicioApp.html")
 
-
-def about(request):
-    return render(request, 'AppMVT/about.html')
+def courses(request):
+    return render(request, "AppMVT/courses.html")
 
 def languages(request, language=False):
     if language:
@@ -30,6 +29,10 @@ def searchlanguages(request):
         return redirect(languages, language=language)
     else:
         return render(request, 'AppMVT/languages.html', {"mensaje": "No enviaste datos!"} )
+
+
+def about(request):
+    return render(request, 'AppMVT/about.html')
 
 def contactform(request):
     if request.method == 'POST':
