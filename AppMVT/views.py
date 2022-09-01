@@ -1,7 +1,8 @@
 from django.shortcuts import render, redirect
 from AppMVT.forms import ContactForm, LanguagesForm
-from AppMVT.models import Contact, Languages
+from AppMVT.models import Contact, Languages, Courses
 from django.http import HttpResponse, HttpResponseRedirect
+
 
 
 
@@ -9,7 +10,10 @@ def inicioApp(request):
     return render(request, "AppMVT/inicioApp.html")
 
 def courses(request):
-    return render(request, "AppMVT/courses.html")
+    courses=Courses.objects.all()
+    return render(
+        request, "AppMVT/courses.html", {"courses": courses}
+        )
 
 def languages(request, language=False):
     if language:

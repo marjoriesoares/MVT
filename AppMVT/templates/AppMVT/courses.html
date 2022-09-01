@@ -15,15 +15,30 @@
       <div class="divider-custom-icon"><i class="fas fa-star"></i></div>
       <div class="divider-custom-line"></div>
     </div>
-    <h4 class="page-section-heading text-center text-secondary mb-0">
+    <h4 class="page-section-heading text-center text-secondary mb-0" style="font-size: 2em">
       Consulte los próximos cursos disponibles de Coderhouse en la area de Programación
     </h4>
   </div>
-  {% for course in Courses %}
-  <div class="portfolio-item mx-auto">
-    <li><p class="text-center">{{ course }}</p></li>
-    -----------------------------------------
+  {% for course in courses %}
+  <div class="page-section-heading">
+    <h6 class="text-center" style="font-size: 1em; color: #1abc9c;">
+      {{ course.name }} </h6>
+    <h6 class="text-center"style="font-size: 1em; color: #2C3E50 ;">
+      {{ course.start_date }}</h6>
+  </div>
+  <div class="divider-custom">
+    <div class="divider-custom-line"></div>
+    <div class="divider-custom-icon"><i class="fas fa-star"></i></div>
+    <div class="divider-custom-line"></div>
   </div>
   {% endfor %}
+  <div class="page-section-heading">
+  <p class="text-center"style="font-size: 1em; color: #2C3E50">
+  Para más informaciones y inscripciones:
+    <a class="text-center" style="font-size: 1em; color: #1abc9c;" 
+    href="https://www.coderhouse.com.uy/">
+    Coderhouse</a>
+  </p>
+  </div>  
 </section>
 {% endblock %}

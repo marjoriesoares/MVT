@@ -20,5 +20,6 @@ from MVT.views import inicio, appMVT, bootstrap
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', inicio),
-    path('AppMVT/', include('AppMVT.urls'))
+    path('AppMVT/', include('AppMVT.urls')),
+    path('iniciobackup/', bootstrap)
 ]
