@@ -15,12 +15,10 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path, include
-from MVT.views import inicio, appMVT
-import AppMVT.urls
+from MVT.views import inicio, appMVT, bootstrap
 
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', inicio),
-    path('', include('AppMVT.urls')),
     path('AppMVT/', include('AppMVT.urls'))
 ]

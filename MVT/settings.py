@@ -55,7 +55,7 @@ ROOT_URLCONF = 'MVT.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': ['C:/Users/marjo/OneDrive/Área de Trabalho/MVT/MVT/MVT/templates/', 'C:/Users/marjo/OneDrive/Área de Trabalho/MVT/MVT/AppMVT/templates/'],
+        'DIRS': ['./MVT/templates', './AppMVT/templates/'],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -118,8 +118,8 @@ USE_TZ = True
 
 STATIC_URL = 'static/'
 STATICFILES_DIRS = [
-    BASE_DIR / "MVT/MVT/static",
-    'MVT/AppMVT/static',
+    BASE_DIR / "./MVT/static",
+    "./AppMVT/static",
 ]
 
 # Default primary key field type

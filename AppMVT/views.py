@@ -1,31 +1,50 @@
-from django.shortcuts import render
-from AppMVT.forms import ContactForm
+from django.shortcuts import render, redirect
+from AppMVT.forms import ContactForm, LanguagesForm
+from AppMVT.models import Contact, Languages
+from django.http import HttpResponse, HttpResponseRedirect
+
+
 
 def inicioApp(request):
-    return render(request, 'inicioApp.html')
+    return render(request, "AppMVT/inicioApp.html")
 
-def contactform(request):
-
-    if request.method == 'GET':
-        miFormulario = ContactForm()
-        
-    elif request.method == 'POST':
-        miFormulario = ContactForm(request.POST)
-        
-        if miFormulario.is_valid():
-            informacion = miFormulario.cleaned_data
-            #fromForm = {full_name:informacion[full_name], email: informacion[email]}
-            #contacto = Contact(fromForm)
-            #contacto.save()
-
-            #return render()
-
-    return render(request, 'contactform.html', {"form": miFormulario})
-
-def portfolio(request):
-    return render(request, 'portfolio.html')
 
 def about(request):
-    return render(request, 'about.html')
+    return render(request, 'AppMVT/about.html')
+
+def languages(request, language=False):
+    if language:
+        lang = Languages.objects.get(language__icontains=language)
+        return render(
+            request,
+            'AppMVT/languages.html',
+            {'language': lang.language, 'text': lang.text}
+        )
+    else:
+        return render(request,'AppMVT/languages.html')
+
+def searchlanguages(request):
+    if request.GET["language"]:
+        language=request.GET["language"]
+        # text=Languages.objects.filter(language=language)
+        return redirect(languages, language=language)
+    else:
+        return render(request, 'AppMVT/languages.html', {"mensaje": "No enviaste datos!"} )
+
+def contactform(request):
+    if request.method == 'POST':
+        myform = ContactForm(request.POST)
+        if myform.is_valid():
+            info = myform.cleaned_data
+            contact=Contact(full_name=info['full_name'],email=info['email'], phone=info['phone'], message=info['message'])
+            contact.save()
+            return render(request, 'AppMVT/inicioApp.html')
+        else:
+            return render(request, 'AppMVT/contactform.html')
+    else:
+        myform = ContactForm()
+        return render(request,'AppMVT/contactform.html', {'contactform':myform})
+
+
 
 

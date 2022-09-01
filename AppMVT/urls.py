@@ -17,8 +17,11 @@ from django.urls import path
 from .views import *
 
 urlpatterns = [
-    path('AppMVT/', inicioApp, name='inicioApp'),
+    path('', inicioApp, name='inicioApp'),
+    path('inicioApp/', inicioApp),
+    path('lenguajes/', languages, name='languages'),
+    path('lenguajes/<language>', languages, name='languages'),
+    path('buscarlenguajes/', searchlanguages, name='searchlanguages'),
+    path('about/', about, name='about'),
     path('contacto/', contactform, name='contactform'),
-    path('portfolio/', portfolio, name='portfolio'),
-    path('about/', about, name='about')
 ]

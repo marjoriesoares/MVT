@@ -8,3 +8,6 @@ def inicio(request):
 
 def appMVT(request):
     return render(request, 'inicio.html')
+
+def bootstrap(request):
+    return render(request, 'iniciobackup.html')

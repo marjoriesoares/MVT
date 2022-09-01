@@ -1,7 +1,6 @@
 {% extends "AppMVT/maintemplate.html" %} {% load static %} {% block Title %}
 <title>Lenguajes</title>
 {% endblock %} {% block Masterhead %}
-<div style="margin: 8em"></div>
 {% endblock %} {% block contenidoQueCambia %}
 <section class="page-section portfolio" style="margin: 0 auto" id="language">
   <div class="container" ; style="margin: 5em auto">
@@ -25,6 +24,16 @@
     <p class="text-center">{{ language }}</p>
     <p>{{ text }}</p>
   </div>
+  {% elif mensaje %}
+  <div class="portfolio-item mx-auto">
+    <p style="
+    text-align: center;
+    color: red;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande',
+      'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+      "
+    > 
+     {{ mensaje }}</p>
   {% endif %}
   <form
     action="/AppMVT/buscarlenguajes"
