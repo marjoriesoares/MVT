@@ -17,7 +17,7 @@ def courses(request):
 
 def languages(request, language=False):
     if language:
-        lang = Languages.objects.get(language__icontains=language)
+        lang = Languages.objects.get(language=language)
         return render(
             request,
             'AppMVT/languages.html',

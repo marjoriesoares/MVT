@@ -21,11 +21,21 @@
   </div>
   {% if language %}
   <div class="portfolio-item mx-auto">
-    <p class="text-center">{{ language }}</p>
-    <p>{{ text }}</p>
+    <p  class="page-section-heading text-center text-secondary mb-0" 
+            style="font-size: 2em; background-color: #1abc9c;" >
+        {{ language }}
+    </p>
+    <div style="margin: 4em"></div>
+    <p style="text-align: justify; text-indent: initial; 
+        color: #2C3E50; font-size: large; font-family: 'Lucida Sans', 
+            'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', 
+                Geneva, Verdana, sans-serif;">
+        {{ text }}
+    </p>
   </div>
   {% elif mensaje %}
   <div class="portfolio-item mx-auto">
+    <b>
     <p style="
     text-align: center;
     color: red;
@@ -33,7 +43,7 @@
       'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
       "
     > 
-     {{ mensaje }}</p>
+     {{ mensaje }}</p> </b>
   {% endif %}
   <form
     action="/AppMVT/buscarlenguajes"
