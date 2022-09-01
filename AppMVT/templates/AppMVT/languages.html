@@ -19,7 +19,7 @@
       Busque un lenguaje y descubra más acerca de el
     </h4>
   </div>
-  {% if language %}
+    {% if language %}
   <div class="portfolio-item mx-auto">
     <p  class="page-section-heading text-center text-secondary mb-0" 
             style="font-size: 2em; background-color: #1abc9c;" >
@@ -31,9 +31,9 @@
             'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', 
                 Geneva, Verdana, sans-serif;">
         {{ text }}
-    </p>
+        </p>
   </div>
-  {% elif mensaje %}
+    {% elif mensaje %}
   <div class="portfolio-item mx-auto">
     <b>
     <p style="
@@ -41,10 +41,8 @@
     color: red;
     font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande',
       'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
-      "
-    > 
-     {{ mensaje }}</p> </b>
-  {% endif %}
+      ">{{ mensaje }}</p> </b>
+    {% endif %}
   <form
     action="/AppMVT/buscarlenguajes"
     method="GET"

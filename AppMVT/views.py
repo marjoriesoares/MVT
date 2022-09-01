@@ -2,6 +2,7 @@ from django.shortcuts import render, redirect
 from AppMVT.forms import ContactForm, LanguagesForm
 from AppMVT.models import Contact, Languages, Courses
 from django.http import HttpResponse, HttpResponseRedirect
+from django.db.models import Q
 
 
 
@@ -17,19 +18,22 @@ def courses(request):
 
 def languages(request, language=False):
     if language:
-        lang = Languages.objects.get(language=language)
-        return render(
-            request,
-            'AppMVT/languages.html',
-            {'language': lang.language, 'text': lang.text}
-        )
+        try:
+            lang = Languages.objects.get(language=language)
+            return render(
+                request,
+                'AppMVT/languages.html',
+                {'language': lang.language, 'text': lang.text}
+                 )
+        except:
+            return render(request, 'AppMVT/languages.html', 
+            {"mensaje": "Lenguaje no identificada. Asegúrese de poner las letras mayúsculas y minúsculas."} )
     else:
         return render(request,'AppMVT/languages.html')
 
 def searchlanguages(request):
     if request.GET["language"]:
         language=request.GET["language"]
-        # text=Languages.objects.filter(language=language)
         return redirect(languages, language=language)
     else:
         return render(request, 'AppMVT/languages.html', {"mensaje": "No enviaste datos!"} )
