@@ -20,6 +20,7 @@ urlpatterns = [
     path('', inicioApp, name='inicioApp'),
     path('inicioApp/', inicioApp),
     path('cursos/', courses, name='courses'),
+    path('addcursos/', addcourses, name='addcourses'),
     path('lenguajes/', languages, name='languages'),
     path('lenguajes/<language>', languages, name='languages'),
     path('buscarlenguajes/', searchlanguages, name='searchlanguages'),

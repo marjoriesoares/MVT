@@ -12,4 +12,5 @@ class Languages(models.Model):
 
 class Courses(models.Model):
     name=models.CharField(max_length=50)
+    instituicion=models.CharField(max_length=50)
     start_date=models.DateField()

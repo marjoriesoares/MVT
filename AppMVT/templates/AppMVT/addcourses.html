@@ -16,24 +16,20 @@
       <div class="divider-custom-line"></div>
     </div>
     <h4 class="page-section-heading text-center text-secondary mb-0" style="font-size: 2em">
-      Consulte los próximos cursos disponibles en la area de Programación
+    Ingrese los datos de los próximos cursos disponibles en la area de Programación
     </h4>
+    {{ mensaje }}
   </div>
-  {% for course in courses %}
-  <div class="page-section-heading">
-    <h6 class="text-center" style="font-size: 1em; color: #1abc9c;">
-      {{ course.name }} </h6>
-    <h4 class="text-center" style="font-size: 1em; color:#6f87a0;">
-      {{ course.instituicion }} </h4>
-    <h4 class="text-center"style="font-size: 1em; color: #2C3E50 ;">
-      {{ course.start_date }}</h4>
-  </div>
-  <div class="divider-custom">
-    <div class="divider-custom-line"></div>
-    <div class="divider-custom-icon"><i class="fas fa-star"></i></div>
-    <div class="divider-custom-line"></div>
-  </div>
-  {% endfor %}
-
+  <form action="{% url 'addcourses' %}" method="POST"style="margin: 0 auto; width: fit-content">{% csrf_token %}
+    <table>
+      
+      {{ myform.as_table }}
+    
+    </table>
+    <p style="text-align:center;  margin-top: 1em;">
+    <input  class="btn btn-primary" type="submit", value="Enviar">
+    </p>
+  </form>
+</div>
 </section>
 {% endblock %}

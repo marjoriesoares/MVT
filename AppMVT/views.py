@@ -1,20 +1,31 @@
 from django.shortcuts import render, redirect
-from AppMVT.forms import ContactForm, LanguagesForm
+from AppMVT.forms import ContactForm, LanguagesForm, CoursesForm
 from AppMVT.models import Contact, Languages, Courses
 from django.http import HttpResponse, HttpResponseRedirect
-from django.db.models import Q
-
-
 
 
 def inicioApp(request):
     return render(request, "AppMVT/inicioApp.html")
 
-def courses(request):
+def addcourses(request):
     courses=Courses.objects.all()
     return render(
-        request, "AppMVT/courses.html", {"courses": courses}
-        )
+        request, "AppMVT/courses.html", {"courses": courses})
+    
+
+def courses(request):
+    if request.method == 'POST':
+        myform = CoursesForm(request.POST)
+        if myform.is_valid():
+            info = myform.cleaned_data
+            course=Courses(name=info['name'],instituicion=info['instituicion'], start_date=info['start_date'])
+            course.save()
+            return render(request, 'AppMVT/courses.html', {'mensaje':"Curso fue ingresado!"})
+        else:
+            return render(request, 'AppMVT/addcourses.html',  {'mensaje':"Datos no validos"})
+    else:
+        myform = CoursesForm()
+    return render(request,'AppMVT/addcourses.html', {'myform':myform})
 
 def languages(request, language=False):
     if language:
@@ -55,7 +66,3 @@ def contactform(request):
     else:
         myform = ContactForm()
         return render(request,'AppMVT/contactform.html', {'contactform':myform})
-
-
-
-
