@@ -6,7 +6,6 @@
 {% block Masterhead %}
 {% endblock %}
 {% block contenidoQueCambia %}
-{{ mensaje }}
 <section class="page-section portfolio" style="margin: 0 auto" id="language">
     <div class="container" ; style="margin: 5em auto">
       <h2
@@ -24,8 +23,8 @@
         Ingrese una lenguaje de programación en nuestra base de datos
       </h4>
     </div>
-    <form action= "{% url 'languages' %}" method="post" style="margin: 0 auto; width: fit-content">{% csrf_token %}
-        <table id="tableForm">
+    <form action= "" method="POST" style="margin: 0 auto; width: fit-content">{% csrf_token %}
+        <table>
             
            {{ myform.as_table }}
 

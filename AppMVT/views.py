@@ -56,7 +56,7 @@ def help(request):
             info = myform.cleaned_data
             language=Languages(language=info['language'],text=info['text'])
             language.save()
-            return redirect(request, 'AppMVT/languages.html')
+            return render(request, 'AppMVT/languages.html')
         else: 
             return render(request, 'AppMVT/help.html', {"mensaje": "No enviaste datos!"})
     else:
