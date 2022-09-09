@@ -8,7 +8,7 @@ To install Django type in the terminal:
 •	Pip install Django
 The directories we will need are configured in settings.py to work without issues on your computer, since only relative paths were used.
 
-##*The structure: MVT and AppMVT
+**The structure: MVT and AppMVT
 
 The main project MVT has an app named AppMVT, to which the user is directly routed once the first page of the project is accessed. 
 Main page  127.0.0.1:800 when accessed it, gets redirect to 127.0.0.1:800/AppMVT.
@@ -68,7 +68,7 @@ El proyecto se llama MVT debido al patrón de diseño de software para el desarr
 Los directorios que necesitaremos están configurados en settings.py para que funcionen sin problemas en tu ordenador, ya que solo se utilizaron rutas 
 relativas. 
 
-##La estructura: MVT y AppMVT
+**La estructura: MVT y AppMVT
 
 El proyecto principal MVT tiene una aplicación llamada AppMVT, a la que se enruta directamente al usuario una vez que se accede a la primera página del proyecto.
 La página principal 127.0.0.1:800 cuando se accede a ella, se redirige a 127.0.0.1:800/AppMVT.  La plantilla trabajada fue tomada de Bootstrap y modificada 
