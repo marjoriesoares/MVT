@@ -15,21 +15,21 @@
       <div class="divider-custom-icon"><i class="fas fa-star"></i></div>
       <div class="divider-custom-line"></div>
     </div>
-    <h4 class="page-section-heading text-center text-secondary mb-0" style="font-size: 2em">
-    Ingrese los datos de los próximos cursos disponibles en la area de Programación
-    </h4>
-    {{ mensaje }}
-  </div>
-  <form action="{% url 'addcourses' %}" method="POST"style="margin: 0 auto; width: fit-content">{% csrf_token %}
-    <table>
-      
-      {{ myform.as_table }}
+
+  <h4 class="page-section-heading text-center text-secondary mb-0" style="font-size: 2em">
+  Ingrese los datos de los próximos cursos disponibles en la area de Programación
+  </h4>
+</div>
+<form action="{% url 'courses' %}" method="POST"style="margin: 0 auto; width: fit-content">{% csrf_token %}
+  <table>
     
-    </table>
-    <p style="text-align:center;  margin-top: 1em;">
-    <input  class="btn btn-primary" type="submit", value="Enviar">
-    </p>
-  </form>
+    {{ myform.as_table }}
+  
+  </table>
+  <p style="text-align:center;  margin-top: 1em;">
+  <a href="{% url 'courses' %}"><input class="btn btn-primary" type="submit" value="Anadir y mirar lista de cursos" > </a>
+  </p>
+</form>
 </div>
 </section>
 {% endblock %}

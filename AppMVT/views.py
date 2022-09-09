@@ -7,22 +7,22 @@ from django.http import HttpResponse, HttpResponseRedirect
 def inicioApp(request):
     return render(request, "AppMVT/inicioApp.html")
 
-def addcourses(request):
+def courses(request):
     courses=Courses.objects.all()
     return render(
         request, "AppMVT/courses.html", {"courses": courses})
     
 
-def courses(request):
+def addcourses(request):
     if request.method == 'POST':
         myform = CoursesForm(request.POST)
         if myform.is_valid():
             info = myform.cleaned_data
             course=Courses(name=info['name'],instituicion=info['instituicion'], start_date=info['start_date'])
             course.save()
-            return render(request, 'AppMVT/courses.html', {'mensaje':"Curso fue ingresado!"})
+            return render(request, 'AppMVT/courses.html')
         else:
-            return render(request, 'AppMVT/addcourses.html',  {'mensaje':"Datos no validos"})
+            return render(request, 'AppMVT/addcourses.html')
     else:
         myform = CoursesForm()
     return render(request,'AppMVT/addcourses.html', {'myform':myform})
