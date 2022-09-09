@@ -23,6 +23,7 @@ urlpatterns = [
     path('addcursos/', addcourses, name='addcourses'),
     path('lenguajes/', languages, name='languages'),
     path('lenguajes/<language>', languages, name='languages'),
+    path('ayuda/', help, name='help'),
     path('buscarlenguajes/', searchlanguages, name='searchlanguages'),
     path('about/', about, name='about'),
     path('contacto/', contactform, name='contactform'),

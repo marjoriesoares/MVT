@@ -11,6 +11,10 @@ class LanguagesForm(forms.Form):
      language=forms.CharField(label='Lenguaje', widget=forms.TextInput(attrs={'placeholder': 'Ingrese su nombre completo', 'class': 'form-control', 'style': 'width: 246px;'}))
      text=forms.CharField(label='Descripción', max_length = 600, widget=forms.Textarea(attrs={'placeholder': 'Ingrese una descripción del lenguaje', 'class': 'form-control', 'style': 'width: 246px;'}))
 
+class AddLanguageForm(forms.Form):
+     language=forms.CharField(label='', widget=forms.TextInput(attrs={'placeholder': 'Ingrese el nombre del lenguaje', 'class': 'form-control', 'style': 'width: 246px; text-align:center'}))
+     text=forms.CharField(label='', max_length = 600, widget=forms.Textarea(attrs={'placeholder': 'Ingrese una descripción del lenguaje', 'class': 'form-control', 'style': 'width: 246px; text-align:center'}))
+
 class CoursesForm(forms.Form):
      name=forms.CharField(label='',max_length=50,widget=forms.TextInput(attrs={'placeholder': 'Ingrese el nombre del curso', 'class': 'form-control', 'style': 'width: 246px; text-align:center'}))
      instituicion=forms.CharField(label='',max_length=50,widget=forms.TextInput(attrs={'placeholder': 'Ingrese la instituición del curso', 'class': 'form-control', 'style': 'width: 246px; text-align:center'}))
