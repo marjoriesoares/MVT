@@ -50,6 +50,8 @@ This button will redirect the user to the path http://127.0.0.1:8000/AppMVT/ayud
 3.	Class “Contact”:
 This session is accessed through the path http://127.0.0.1:8000/AppMVT/contacto .
 The contact form works as the method “POST” and will send user data to the DB where it will be stored. 
+![image](https://user-images.githubusercontent.com/108837573/189413547-af290ff7-7017-4a11-88ce-d7a86a7d56ba.png)
+
 
 4.	The about session is only a session to test the image file and how it displays in the template. The image can be replaced with your own information.
 Remember to change all the information in the footer related to the author as well.
@@ -85,7 +87,6 @@ Los objetos almacenados en la base de datos se representan en la plantilla y mue
 En la parte inferior de la lista de cursos hay un botón para agregar más cursos en la base de datos. 
 El botón redirige al usuario a la ruta http://127.0.0.1:8000/AppMVT/addcursos/
 Aquí el usuario puede agregar cursos siguiendo la estructura de los Cursos modelo (nombre, institución, start_date).
-![image](https://user-images.githubusercontent.com/108837573/189411598-e94f4f23-90eb-476b-ba5d-2992292a4e63.png)
 Al hacer clic para enviar los datos, el usuario es redirigido de nuevo a http://127.0.0.1:8000/AppMVT/cursos/ 
 donde el nuevo curso agregado se puede ver en la parte inferior de la lista.
 
@@ -93,13 +94,11 @@ donde el nuevo curso agregado se puede ver en la parte inferior de la lista.
 
 A esta sesión se accede a través de la ruta http://127.0.0.1:8000/AppMVT/lenguajes/. 
 Los objetos almacenados en la base de datos se recuperan a través de un formulario de búsqueda, en el que el usuario debe escribir un nombre de lenguaje de programación y aparecerá un breve texto tomado de la base de datos asociada a ese lenguaje.
-![image](https://user-images.githubusercontent.com/108837573/189411598-e94f4f23-90eb-476b-ba5d-2992292a4e63.png)
 
 El formulario de búsqueda tiene el método "GET" y distingue entre mayúsculas y minúsculas, aceptando solo idiomas escritos con la primera letra mayúscula y si algún idioma tiene letras mayúsculas en el medio de su presentación, como JavaScript, la letra mayúscula también debe escribirse. Si hay un error tipográfico, no cumple con los requisitos o el objeto no se encuentra en la base de datos, aparecerá un mensaje que indica que no se identificó ningún lenguaje. Si el formulario se envía sin ningún dato, se mostrará un mensaje que indica que no se ingresaron datos.   
 
 En caso de que el idioma que el usuario está buscando no esté en la base de datos, el usuario puede insertarlo a través del botón "No encuentro mi lenguaje". 
 Este botón redirigirá al usuario a la ruta http://127.0.0.1:8000/AppMVT/ayuda/ donde hay un formulario para insertar el idioma que falta en la base de datos.
-![image](https://user-images.githubusercontent.com/108837573/189411932-2828ff6a-5fa0-4915-b5ef-5b04d19742db.png)
 
 3. Clase "Contacto": 
 
